@@ -16,6 +16,10 @@ Uninstallation
     git clone https://github.com/DovgaNik/Quad.git
     cd Quad
     sudo make uninstall
+Or you can type
+
+    sudo rm /bin/quad
+
 Soon
 ---
   * I will add version for Windows
