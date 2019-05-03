@@ -6,6 +6,28 @@ using namespace std;
 
 float xarr[3];
 bool countable;
+string file_name;
+
+void parser(string file){
+	string	line,
+		tokena,
+		tokenb,
+		tokenc;
+	fstream in(file);
+	if(in.is_open()){
+		while(getline(in, line)){
+			//cout << line << endl;
+			tokena = line.substr(0, line.find("="));
+			cout << tokena + " a" << endl;
+//			tokenb = line.substr(0, line.find("x ")).substr(0, tokena);
+			/*token = line.substr(0, line.find("x "));
+			cout << token + " b" << endl;
+			token = line.substr(0, line.find("x^2"));
+			cout << token + " c" << endl;*/
+		}
+	}
+	in.close();
+}
 
 void counter(float a, float b, float c){
 	float 	d = (pow(b, 2) - 4 * a * c);//This line counts discriminant.
@@ -35,14 +57,23 @@ void counter(float a, float b, float c){
 }
 
 int main(int argc, char *argv[]){
-	counter(atof(argv[1]), atof(argv[2]), atof(argv[3]));
-	if(countable){
-		if(xarr[2] != 0){
-			cout << xarr[0] << " - Discriminant" << endl << xarr[1] << " - x1" << endl << xarr[2] << " - x2" << endl;
-		}else{
-			cout << xarr[0] << " - Discriminant" << endl << xarr[1] << " - x" << endl;
-		}
+	/*if(argc == 3){
+		file_name = argv[2];
+	}
+	parser(file_name);
+	*/if(argc != 4){
+		cout << "Usage: quad [options] a b c" << endl; 
 	}else{
-		cout << "Discriminant is lower than 0" << endl;	
+		cout << argc << endl;
+		counter(atof(argv[1]), atof(argv[2]), atof(argv[3]));
+		if(countable){
+			if(xarr[2] != 0){
+				cout << xarr[0] << " - Discriminant" << endl << xarr[1] << " - x1" << endl << xarr[2] << " - x2" << endl;
+			}else{
+				cout << xarr[0] << " - Discriminant" << endl << xarr[1] << " - x" << endl;
+			}
+		}else{
+			cout << "Discriminant is lower than 0" << endl;	
+		}
 	}
 }

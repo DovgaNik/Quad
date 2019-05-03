@@ -1,17 +1,18 @@
-CppC=g++ -pipe
+CppC=g++
+CFlags= -pipe -Wall -Wextra -Wpedantic
 EXE=quad
 SRC=src/main.cpp
 OBJ=build/main.o
 DESTDIR=/bin
 
 all: bin/$(EXE)
-	$(CppC) $(OBJ) -o bin/$(EXE)
+	$(CppC) $(CFlags) $(OBJ) -o bin/$(EXE)
 
 bin/$(EXE): $(OBJ)
-	$(CppC) $(OBJ) -o bin/$(EXE)
+	$(CppC) $(CFlags) $(OBJ) -o bin/$(EXE)
 
 $(OBJ): $(SRC)
-	$(CppC) -c $(SRC) -o $(OBJ)
+	$(CppC) $(CFlags) -c $(SRC) -o $(OBJ)
 
 clean:
 	rm $(OBJ) bin/$(EXE)
