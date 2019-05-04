@@ -15,8 +15,7 @@ $(OBJ): $(SRC)
 	$(CppC) $(CFlags) -c $(SRC) -o $(OBJ)
 
 clean:
-	rm $(OBJ) bin/$(EXE)
-	rm $(DESTDIR)/$(EXE)
+	rm -rf $(OBJ) bin/$(EXE)
 
 .PHONY: install
 install: bin/$(EXE)
