@@ -16,13 +16,14 @@ void parser(string file){
 	fstream in(file);
 	if(in.is_open()){
 		while(getline(in, line)){
-			//cout << line << endl;
-			tokena = line.substr(0, line.find("="));
+			//Start parsing
+			tokena = line.substr(0, line.find("x^2 "));
 			cout << tokena + " a" << endl;
-//			tokenb = line.substr(0, line.find("x ")).substr(0, tokena);
-			/*token = line.substr(0, line.find("x "));
-			cout << token + " b" << endl;
-			token = line.substr(0, line.find("x^2"));
+			tokenb = line.substr(0, line.find("x "));
+			//tokenb = tokenb.substr(0, line.find(tokena));
+			//token = line.substr(0, line.find("x "));
+			cout << tokenb + " b" << endl;
+			/*ken = line.substr(0, line.find("x^2"));
 			cout << token + " c" << endl;*/
 		}
 	}
@@ -57,13 +58,14 @@ void counter(float a, float b, float c){
 }
 
 int main(int argc, char *argv[]){
-	/*if(argc == 3){
+	if(argc <= 2){
+		cout << "Usage: quad [a] [b] [c]" << endl;
+	}
+	if(argc == 3){
 		file_name = argv[2];
 	}
 	parser(file_name);
-	*/if(argc != 4){
-		cout << "Usage: quad [options] a b c" << endl; 
-	}else{
+	if(argc == 4){
 		cout << argc << endl;
 		counter(atof(argv[1]), atof(argv[2]), atof(argv[3]));
 		if(countable){

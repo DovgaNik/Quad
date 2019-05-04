@@ -6,7 +6,6 @@ OBJ=build/main.o
 DESTDIR=/bin
 
 all: bin/$(EXE)
-	$(CppC) $(CFlags) $(OBJ) -o bin/$(EXE)
 
 bin/$(EXE): $(OBJ)
 	$(CppC) $(CFlags) $(OBJ) -o bin/$(EXE)
