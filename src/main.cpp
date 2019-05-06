@@ -6,9 +6,9 @@ using namespace std;
 
 float xarr[3];
 bool countable;
-string file_name;
+//string file_name;
 
-void parser(string file){
+/*void parser(string file){
 	string	line,
 		tokena,
 		tokenb,
@@ -16,19 +16,29 @@ void parser(string file){
 	fstream in(file);
 	if(in.is_open()){
 		while(getline(in, line)){
+			//Started parsing
+			
+
 			//Start parsing
+			//Parsing a
 			tokena = line.substr(0, line.find("x^2 "));
 			cout << tokena + " a" << endl;
+			
+			//Parsing b
 			tokenb = line.substr(0, line.find("x "));
+			cout << tokenb + " b tmp" << endl;
+			tokenb = tokenb.substr(0, tokena + "x^2");
+			cout << tokenb + " b" << endl;
+
 			//tokenb = tokenb.substr(0, line.find(tokena));
 			//token = line.substr(0, line.find("x "));
-			cout << tokenb + " b" << endl;
-			/*ken = line.substr(0, line.find("x^2"));
-			cout << token + " c" << endl;*/
+			//cout << tokenb + " b" << endl;
+			token = line.substr(0, line.find("x^2"));
+			//cout << token + " c" << endl;
 		}
 	}
 	in.close();
-}
+}*/
 
 void counter(float a, float b, float c){
 	float 	d = (pow(b, 2) - 4 * a * c);//This line counts discriminant.
@@ -61,10 +71,10 @@ int main(int argc, char *argv[]){
 	if(argc <= 2){
 		cout << "Usage: quad [a] [b] [c]" << endl;
 	}
-	if(argc == 3){
+	/*if(argc == 3){
 		file_name = argv[2];
 	}
-	parser(file_name);
+	parser(file_name);*/
 	if(argc == 4){
 		cout << argc << endl;
 		counter(atof(argv[1]), atof(argv[2]), atof(argv[3]));
