@@ -8,9 +8,11 @@ DESTDIR=/bin
 all: bin/$(EXE)
 
 bin/$(EXE): $(OBJ)
+	mkdir bin
 	$(CppC) $(CFlags) $(OBJ) -o bin/$(EXE)
 
 $(OBJ): $(SRC)
+	mkdir build
 	$(CppC) $(CFlags) -c $(SRC) -o $(OBJ)
 
 clean:
