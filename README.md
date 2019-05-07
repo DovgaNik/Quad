@@ -23,5 +23,4 @@ Or you can type
 Soon
 ---
   * I will add version for Windows(not soon)
-  * I will add reading equation from file and writing result to the file
   * I will add "verbose" function for debugging(for developers)
