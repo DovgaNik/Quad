@@ -8,15 +8,15 @@ DESTDIR=/bin
 all: bin/$(EXE)
 
 bin/$(EXE): $(OBJ)
-	mkdir bin
+	mkdir -p bin
 	$(CppC) $(CFlags) $(OBJ) -o bin/$(EXE)
 
 $(OBJ): $(SRC)
-	mkdir build
+	mkdir -p build
 	$(CppC) $(CFlags) -c $(SRC) -o $(OBJ)
 
 clean:
-	rm -rf $(OBJ) bin/$(EXE)
+	rm -rf build bin
 
 .PHONY: install
 install: bin/$(EXE)

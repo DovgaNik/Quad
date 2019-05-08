@@ -76,7 +76,6 @@ int main(int argc, char *argv[]){
 	}
 	parser(file_name);*/
 	if(argc == 4){
-		cout << argc << endl;
 		counter(atof(argv[1]), atof(argv[2]), atof(argv[3]));
 		if(countable){
 			if(xarr[2] != 0){

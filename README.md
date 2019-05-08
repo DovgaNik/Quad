@@ -7,6 +7,8 @@ Syntax
 
 Installation
 ---
+On any linux distribution
+
     git clone https://github.com/DovgaNik/Quad.git
     cd Quad
     sudo make install
