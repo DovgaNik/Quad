@@ -5,10 +5,11 @@
 using namespace std;
 
 float xarr[3];
-bool countable;
+bool countable,
+     verbose = false;
 //string file_name;
 
-/*void parser(string file){
+/*void parser(string file){ //Masybe this code will never be used but i`ll leave it here
 	string	line,
 		tokena,
 		tokenb,
@@ -51,6 +52,12 @@ void counter(float a, float b, float c){
 		num1 = b * -1 + sqrt(d);
 		num2 = b * -1 - sqrt(d);
 		denum = 2 * a;
+		if(verbose){
+			cout << "Discriminant is higher than 0" << endl;
+			cout << "First num is " << num1 << endl;
+			cout << "Second num is " << num2 << endl;
+			cout << "denum is " << denum << endl;	
+		}
 		xarr[1] = num1 / denum;
 		xarr[2] = num2 / denum;
 		countable = true;
@@ -58,10 +65,18 @@ void counter(float a, float b, float c){
 	if(d == 0){//This statement will check if the diskriminant equals zero. That means that there is one solution.
 		num = b * -1;
 		denum = 2 * a;
+		if(verbose){
+			cout << "Discriminant is 0" << endl;
+			cout << "num is " << num << endl;
+			cout << "denum is " << denum << endl;	
+		}
 		xarr[1] = num / denum;
 		countable = true;
 	}
 	if(d < 0){//This statement will check if diskriminat is lower than zero. That means that there isn't any solutions.
+		if(verbose){
+			cout << "Discriminant is lower than 0" << endl;
+		}
 		countable = false;
 	}
 	xarr[0] = d;
@@ -69,12 +84,21 @@ void counter(float a, float b, float c){
 
 int main(int argc, char *argv[]){
 	if(argc <= 2){
-		cout << "Usage: quad [a] [b] [c]" << endl;
+		cout << "Usage: quad [a] [b] [c] [options]" << endl << "\tv - verbose(only for developers)" << endl;
 	}
-	/*if(argc == 3){
-		file_name = argv[2];
+	if(argc == 5){
+		verbose = true;
+		counter(atof(argv[1]), atof(argv[2]), atof(argv[3]));
+		if(countable){
+			if(xarr[2] != 0){
+				cout << xarr[0] << " - Discriminant" << endl << xarr[1] << " - x1" << endl << xarr[2] << " - x2" << endl;
+			}else{
+				cout << xarr[0] << " - Discriminant" << endl << xarr[1] << " - x" << endl;
+			}
+		}else{
+			cout << "Discriminant is lower than 0" << endl;	
+		}
 	}
-	parser(file_name);*/
 	if(argc == 4){
 		counter(atof(argv[1]), atof(argv[2]), atof(argv[3]));
 		if(countable){

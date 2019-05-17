@@ -3,7 +3,11 @@ Quad
 
 Syntax
 ---
-`quad a b c`
+`quad [a] [b] [c] [options]`
+
+Options
+---
+	v - verbose(only for developers)
 
 Installation
 ---
@@ -25,4 +29,3 @@ Or you can type
 Soon
 ---
   * I will add version for Windows(not soon)
-  * I will add "verbose" function for debugging(for developers)
