@@ -5,9 +5,12 @@ Syntax
 ---
 `quad [a] [b] [c] [options]`
 
+![screenshot](screenshot/standart.png)
+
 Options
 ---
 	v - verbose(only for developers)
+![screenshot](screenshot/verbose.png)
 
 Installation
 ---
